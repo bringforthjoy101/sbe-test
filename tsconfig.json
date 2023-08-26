@@ -1,0 +1,34 @@
+{
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true
+  },
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "module": "commonjs",
+    "allowJs": true,
+    "checkJs": true,
+    "target": "es6",
+    "rootDir": "./src",
+    "outDir": "./build",
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "types": [
+      "jest",
+    ],
+    "typeRoots": [
+      "./@types",
+      "./node_modules/@types"
+    ],
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "lib": ["dom", "es2021"]
+  },
+  "include": [
+    "**/*",
+  ],
+  "exclude": ["./coverage", "./build", "__tests__", "jest.config.js"]
+}
