@@ -22,7 +22,7 @@ export class UsersService {
 			if (userExists.status && userExists.data.length)
 				return fnResponse({
 					status: false,
-					message: ResponseMSG.RECORD_EXISTS.replace('{model}', 'User'),
+					message: ResponseMSG.RECORD_EXISTS.replace('{model}', DBTables.USERS),
 				});
 
 			await this.db.insertSQL(DBTables.USERS, { name, email });

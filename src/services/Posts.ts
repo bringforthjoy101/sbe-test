@@ -41,6 +41,13 @@ export class PostsService {
 
 	public getUserPosts = async (userId: string): Promise<FnResponseDataType> => {
 		try {
+			const userExists = await this.db.selectSQL(DBTables.USERS, { id: userId });
+			if (userExists.status && !userExists.data.length)
+				return fnResponse({
+					status: false,
+					message: ResponseMSG.RECORD_NOT_FOUND.replace('{model}', DBTables.USERS),
+				});
+
 			const postExists = await this.db.selectSQL(DBTables.POSTS, { userId });
 			if (!postExists.status)
 				return fnResponse({

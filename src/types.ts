@@ -15,6 +15,7 @@ export enum ResponseMSG {
 	ERROR = 'An error occurred:- {error}',
 	RECORD_EXISTS = '{model} already exists!',
 	RECORD_NOT_FOUND = '{model} not found!',
+	VALIDATION_ERROR = 'Validation Error',
 }
 
 export enum Routes {

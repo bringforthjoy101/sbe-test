@@ -28,6 +28,7 @@ export class PostController {
 
 	public retrieve = async (req: Request, res: Response) => {
 		const { id } = req.params;
+		console.log({ params: id });
 		try {
 			const posts: FnResponseDataType = await this.postsService.getUserPosts(id);
 			if (!posts.status) return errorResponse(res, posts.message);
